@@ -1,0 +1,12 @@
+<table class="table">
+	<% @tasks.each do |task| %>
+		<tr>
+			<td> <%= task.project.name %> </td>
+			<td> <%= task.dedication %> </td>
+		</tr>
+	<% end %>
+	<tr>
+		<td>Total:</td>
+		<td><%= @tasks.map{|task| task.dedication }.sum %></td>
+	</tr>
+</table>

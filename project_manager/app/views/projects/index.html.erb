@@ -1,0 +1,19 @@
+<h1>Projects#index</h1>
+<div class="container">
+	<div class="row">
+		<% @projects.each_slice(4) do |row| %>
+			<% row.each do |project| %>
+				<div class="col">
+					<div class="card">
+						<div class="body">
+							<h5><%= project.name %></h5>
+							<%= link_to "Asignar Empleado", project_tasks_path(project), class: 'btn btn-success', method: :post%>
+							<%= link_to "Des-Asignar Empleado", project_tasks_path(project), class: 'btn btn-success', method: :post%>
+						</div>
+					</div>
+				</div>
+			<% end %>
+			<div class="w-100"></div>
+		<% end %>
+	</div>
+</div>
